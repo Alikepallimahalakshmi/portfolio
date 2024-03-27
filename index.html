@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<head>
+    <title>Portfolio</title>
+    <style>
+            body {
+                background-image: url("https://s3.amazonaws.com/codementor_content/2015-Aug-week3/portfolio.jpg");
+                background-color: black;
+                background-repeat: no-repeat;
+                background-size:contain;
+                color: white;
+            }
+            .nav ul{
+                list-style-type: none;
+                margin: 0 20px;
+                padding: 30px 20px;
+                text-align: right;
+            }
+            .nav ul li{
+                display: inline-block;
+            }
+            .nav ul li a{
+                padding: 4px;
+                margin: 10px 20px;
+                color: white;
+                font-size: 25px;
+                text-decoration: none;
+                position: relative;
+            }
+            .nav ul li a::after{
+                content: '';
+                width:0;
+                height: 3px;
+                background: #3f83db;
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                transition: 0.5s;
+            }
+            .nav ul li a:hover::after{
+                width: 100%;
+            }
+            .header-text h1{
+                margin-top: 13%;
+                font-size: 70px;
+                color: black;
+                margin-left: 10%;
+            }
+            .header-text h1 span{
+                color: #3f83db;
+            }
+            .header-text p{
+                font-size: 40px;
+                color: black;
+                margin-top: -2%;
+                margin-left: 10%;
+            }
+            #about{
+                padding: 40% 0;
+                color: black;
+            }
+            .row{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .about-col-1{
+                flex-basis: 35%;
+            }
+            .about-col-1 img{
+                width: 100%;
+                border-radius: 15px;
+                margin-left: 5%;
+            }
+            .about-col-2{
+                flex-basis: 60%;
+            }
+            .tab-titles{
+                display: flex;
+                margin: 20px 0 40px;
+            }
+            .tab-links{
+                font-size:25px;
+                color: white;
+                margin-right: 50px;
+                font-weight: 500;
+                cursor: pointer;
+                position: relative;
+            }
+            .tab-links::after{
+                content: '';
+                width: 0;
+                height: 3px;
+                background-color: #3f83db;
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                transition: 0.5s;
+            }
+            .tab-links.active-link::after{
+                width: 50%;
+            }
+            .tab-contents ul li{
+                color: white;
+                font-size: 20px;
+                margin: 10px 0;
+                list-style-type:none;
+            }
+            .tab-contents ul li span{
+                color: #3f83db;
+            }
+            .tab-contents {
+                display: none;
+            }
+            .tab-contents.active-tab{
+                display: block;
+            }
+            .certifications-col-1{
+                flex-basis: 20%;
+            }
+            .certifications-col-1 img{
+                width: 200%;
+                border-radius: 10px;
+                margin-left: 30%;
+            }
+            .certifications-left{
+            flex-basis: 35%;
+            margin-top: 30px;
+            }
+            .certifications-right{
+            flex-basis: 60%;
+            padding: 1% 0;
+            font-size: 25px;
+            }
+            .contact-left{
+                flex-basis: 35%;
+                margin-left: 5%;
+            }
+            .contact-right{
+                flex-basis: 60%;
+            }
+            .contact-left p{
+                margin-top: 30px;
+            }
+            .contact-left p i{
+                color:#3f83db;
+                margin-right: 15px;
+                font-size: 25px;
+            }
+            .social-icons{
+                margin-top: 30px;
+            }
+            .social-icons a{
+                text-decoration: none;
+                font-size: 30px;
+                margin-right: 15px;
+                color:#ababab;
+                display: inline-block;
+                transition: transform 0.5s;
+            }
+            .social-icons a:hover{
+                color: #3f83db;
+                transform: translateY(-5px);
+            }
+            .btn{
+                display: block;
+                margin: 50px auto;
+                width:fit-content;
+                border:1px solid white;
+                padding: 14px 50px;
+                text-decoration: none;
+                color: white;
+                border-radius: 5px;
+                transition: background 0.5s;
+            }
+            .btn:hover{
+                background: #3f83db;
+            }
+            .btn.btn2{
+                display: inline-block;
+                background:  #3f83db;
+            }
+            form  input, form textarea{
+                width:90%;
+                border:0;
+                outline: none;
+                background: #262626;
+                padding: 15px;
+                margin: 15px 0;
+                color: #fff;
+                font-size: 20px;
+                border-radius: 5px;
+            }
+            form .btn2{
+                padding: 14px 60px;
+                font-size: 20px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+            
+            .portfolio-left img{
+            width: 550px;
+            height: 315px;
+            border-radius: 15px;
+            margin-left: 5%;
+        }
+        .portfolio-left{
+            flex-basis: 35%;
+            margin-top: 30px;
+        }
+        .portfolio-right{
+            flex-basis: 60%;
+            padding: 1% 0;
+            font-size: 25px;
+        }
+            
+          </style>
+<body>
+    <div class="nav">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact" >Contact</a></li>
+    </ul>
+</div>
+    <div class="header-text">
+        <h1>Hey there,I'm <span>Alikepalli Mahalakshmi</span></h1>
+        <p><b>A Student</b></p>
+    </div>
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="c:\Users\KOTI REDDY\Pictures\maha.jpg" alt="picture">
+                </div>
+                <div class="about-col-2">
+                    <h1 style="font-size: 60px;font-weight: 600;color:white;">About Me</h1>
+                    <p style="color: white;font-size: 20px;">Hello, I'm A.Mahalakshmi, currently pursuing  B.Tech second year at Kakinada Institute Of Engineering And Technology-KIET College. My field of study is Computer Science and Engineering with a specialization of  Data Science.Here i'm data scientist and my goal is to get a good job .</p>
+                    <p><i class="fas fa-phone"></i><a href="tel:8639858431">8639858431</a></p>
+                    <div class="social-icons">
+                    <a href="mailto:alikepallimahalakshmi@gmail.com" style="color:rgb(31, 15, 255);text-decoration:none;">E-mail: alikepallimahalakshmi@gmail.com</a>
+                    <div class="tab-titles">
+                    <p  class="tab-links" onclick="opentab('education')"><b>Education</b></p>
+                    <p  class="tab-links active-link" onclick="opentab('skills')"><b>Skills</b></p>
+                    </div>
+                        <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Technical Skills</span><br>C-Language<br>Python<br>HTML<br>CSS<br>JavaScript</li><br>
+                            <li><span>Professional Skills</span><br>Communication<br>Team work</li><br>
+                            
+                        </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2019-2020</span><br>10th from Z.P.High School</li><br>
+                            <li><span>2020-2022</span><br>Inter from  Sri Prathibha Junior College</li><br>
+                            <li><span>2022-2026</span><br>Present studying B-TECH in KIET College</li><br>
+                        </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <h1 style="font-size: 45px;text-align: center;">My Project</h1>
+    <div id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="portfolio-left">
+                    <img src="c:\Users\KOTI REDDY\Downloads\my project.jpeg" alt="project">
+                </div>
+                <div class="portfolio-left">
+                    <h2> <p>This is our team project</p></h2>
+                    <h3><p>Here Our project name is Price Predictor For E-Commerce we created our project for online shopping. <br>So that the people can easily buy the products in low price</p></h3>
+                    <button type="button" class="btn btn2"><a href="https://www.linkedin.com/posts/rokkam-kokila-6a9a11260_projectnest2k23-rksir-revathidubamam-activity-7118211569422909441-D6BH?utm_source=share&utm_medium=member_android"style="text-decoration:none;color:white;">View Source</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 style="font-size: 45px;text-align: center;">Certifications</h1>
+    <section id="certifications">
+        <div class="container">
+            <div class="row">
+                <div class="certifications-col-1">
+                    <img src="c:\Users\KOTI REDDY\Downloads\basics of python.jpg" alt="picture">
+                </div>
+                <div class="certifications-left">
+                    <h2> <p>EDYST Certificate</p></h2>
+                    <h3><p> This is my EDYST Certificate<br> In which i leart breifly about the courses of python like Basics of python and Introduction to python</p></h3>
+                    
+                </div>
+                </div>
+                </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i><a href="mailto:alikepallimahalakshmi@gmail.com">mailto:alikepallimahalakshmi@gmail.com"</a></p>
+                    <p><i class="fas fa-phone"></i><a href="tel:8639858431">8639858431</a></p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/teddy___988" target="_blank">
+    <i class="fab fa-instagram"></i>
+</a>
+                            <a href="https://www.linkedin.com/in/Alikepalli Mahalakshmi" target="_blank">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        <a href="https://github.com/Alikepallimahalakshmi" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-right">
+                    <form>
+                        <input type="text"  name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
+        
